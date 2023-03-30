@@ -26,7 +26,7 @@ module.exports = {
         {
           title: "Neuer Content",
           description: description,
-          color: 0x00ff00,
+          color: 0xff47e9,
           fields: [
             {
               name: "Link",

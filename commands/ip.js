@@ -1,6 +1,4 @@
 const { SlashCommandBuilder } = require("discord.js");
-const { randomBytes } = require("node:crypto");
-const { verifications } = require("../helpers.js");
 
 module.exports = {
   data: new SlashCommandBuilder()

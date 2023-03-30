@@ -19,7 +19,7 @@ const getServerEmbed = async (domain, title, description, version) => {
     {
       name: "Status",
       value: data.online ? "Online" : "Offline",
-      inline: true,
+      inline: false,
     },
   ];
 
@@ -41,7 +41,7 @@ const getServerEmbed = async (domain, title, description, version) => {
       {
         name: "Spieler",
         value: `${data.players.online}/${data.players.max}`,
-        inline: false,
+        inline: true,
       },
     ],
   };
@@ -52,7 +52,9 @@ module.exports = {
     .setName("servers")
     .setDescription("Gibt dir Informtionen zu unseren Servern"),
   async execute(interaction) {
-    await interaction.deferReply();
+    await interaction.deferReply({
+      ephemeral: true,
+    });
 
     try {
       interaction.editReply({
@@ -82,7 +84,6 @@ module.exports = {
       interaction.editReply({
         content:
           "Es ist ein Fehler aufgetreten. Die API ist aktuell nicht erreichbar.",
-        ephemeral: true,
       });
     }
   },
